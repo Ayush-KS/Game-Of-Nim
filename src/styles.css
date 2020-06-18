@@ -3,7 +3,7 @@
 body {
     background-color:#100303;
     color:#e0dede;
-    margin:0px;
+    margin:0px !important;
 }
 
 app-root {
