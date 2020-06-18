@@ -1,0 +1,45 @@
+<div id="board">
+
+    <div id="row1" class="row">
+        <stick *ngFor="let stick of sticks[0]; let i = index" (click)="hideStick(0, i)">
+
+        </stick>
+    </div>
+    <div id="row2" class="row">
+        <stick *ngFor="let stick of sticks[1]; let i = index" (click)="hideStick(1, i)">
+
+        </stick>
+    </div>
+    <div id="row3" class="row">
+        <stick *ngFor="let stick of sticks[2]; let i = index" (click)="hideStick(2, i)">
+
+        </stick>
+    </div>
+    <div id="row4" class="row">
+        <stick *ngFor="let stick of sticks[3]; let i = index" (click)="hideStick(3, i)">
+
+        </stick>
+    </div>
+    <div id="winner-declaration">
+        <h5 *ngIf="winner">
+            {{winner}} won the game!
+        </h5>
+    </div>
+    <div id="next-move">
+        <button mat-raised-button color="warn" (click)="computerMove()">Machine's move!</button>
+    </div>
+    <div id="new-game">
+        <button mat-raised-button color="primary" id="new-game" (click)="newGame()">
+            New Game
+        </button>
+    </div>
+    
+    
+<!--     
+    <div *ngIf="showPrompt" id="prompt">
+        <button mat-raised-button color="warn" (click)="hidePrompt(true)">I go first!</button>
+        <button mat-raised-button color="warn" (click)="hidePrompt(false)">I'll go second!</button>
+    </div> -->
+
+    
+</div>

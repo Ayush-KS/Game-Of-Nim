@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+body {
+    background-color:#100303;
+    color:#e0dede;
+    margin:0px;
+}
+
+app-root {
+    padding: 10px;
+    padding-top:0px;
+}
+
+@media only screen and (max-width: 700px) {
+    table, #info-scoreboard {
+        width:100% !important;
+    }
+
+    #info-scoreboard {
+        flex-direction: column-reverse !important;
+    }
+    main {
+        margin-top: 30px !important;
+    }
+
+    #board .row {
+        height: 70px !important;
+    }
+  }

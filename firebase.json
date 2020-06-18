@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "GameOfNim",
+      "public": "dist/GameOfNim",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'GameOfNim';
+  title = 'Nim';
+  machineScore:number;
+  yourScore:number;
+  updateScores(scores) {
+    this.machineScore = scores.machineScore;
+    this.yourScore = scores.yourScore;
+  }
 }

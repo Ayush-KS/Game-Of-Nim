@@ -1,0 +1,60 @@
+header {
+    width:100%;
+    position: fixed;
+    top:0px;
+    padding: 10px;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 1;
+    background-color:#100303;
+}
+main {
+    margin-top: 65px;
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height:auto;
+}
+table {
+    width:50%;
+    display:flex;
+    justify-content: center;
+}
+
+#info-scoreboard {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+#info-card {
+    background-color:#282121;
+    color:#e0dede;
+    width: 90%;
+    font-size: larger;
+}
+
+mat-card-subtitle {
+    color:white;
+}
+
+#info-card p {
+    font-size:1rem;
+}
+
+#scoreboard {
+    margin: 2rem 0 2rem 0;
+    width:90%;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#scoreboard div {
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1rem;
+}

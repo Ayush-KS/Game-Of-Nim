@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "game-of-nim-1": {
+      "hosting": {
+        "GameOfNim": [
+          "game-of-nim-1"
+        ]
+      }
+    }
+  }
+}
