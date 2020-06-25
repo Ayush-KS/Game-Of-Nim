@@ -13,7 +13,6 @@ export class TableComponent implements OnInit {
   sticks: any[][];
   isUserNext: number;
   winner: string;
-  //showPrompt: boolean;
   chosenRow: number;
   clicked: any;
   machineScore: number;
@@ -22,7 +21,6 @@ export class TableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    //this.showPrompt = true;
     this.machineScore = this.yourScore = 0;
     this.newGame();
   }
@@ -40,24 +38,16 @@ export class TableComponent implements OnInit {
     this.sticks[1] = Array(3).fill(null);
     this.sticks[2] = Array(5).fill(null);
     this.sticks[3] = Array(7).fill(null);
-    //this.showPrompt = true;
     for(let i = 1; i <= 4; i++) {
       var id = "row" + (i);
       id = id.toString();
       var stix = document.getElementById(id);
-      //console.log(stix);
       for(let j = 0; j < stix.children.length; j++) {
         stix.children[j].classList.remove('hide');
       }
     }
     
   }
-
-  // hidePrompt(x:boolean) {
-  //   this.isUserNext = x;
-  //   //this.showPrompt = false;
-  //   this.nextMove();
-  // }
 
   hideStick(i:number, j:number) {
     if(this.chosenRow == -1) {
@@ -68,14 +58,11 @@ export class TableComponent implements OnInit {
     this.isUserNext = 2;
     var id = "row" + (i+1);
     id = id.toString();
-    // console.log(id);
     var stix = document.getElementById(id);
     var singleStic = stix.children[j];
     singleStic.classList.add("hide");
 
     this.isGameOver("Machine");
-    // console.log(stix.children[j]);
-    // console.log(i, j);
   }
 
   isWinningPosition(rowsCount) {
@@ -92,7 +79,6 @@ export class TableComponent implements OnInit {
       var id = "row" + (i);
       id = id.toString();
       var stix = document.getElementById(id);
-      //console.log(stix);
       let count = 0;
       for(let j = 0; j < stix.children.length; j++) {
         if(!(stix.children[j].classList.contains('hide')))
@@ -125,7 +111,6 @@ export class TableComponent implements OnInit {
       var id = "row" + (i);
       id = id.toString();
       var stix = document.getElementById(id);
-      //console.log(stix);
       let count = 0;
       for(let j = 0; j < stix.children.length; j++) {
         if(!(stix.children[j].classList.contains('hide')))
@@ -179,7 +164,6 @@ export class TableComponent implements OnInit {
           var id = "row" + (arr[i]);
           id = id.toString();
           var stix = document.getElementById(id);
-          //console.log(stix);
           
           for(let j = 0; j < stix.children.length; j++) {
             if(!(stix.children[j].classList.contains('hide'))) {
