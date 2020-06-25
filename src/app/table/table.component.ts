@@ -17,6 +17,7 @@ export class TableComponent implements OnInit {
   clicked: any;
   machineScore: number;
   yourScore: number;
+  over:boolean;
 
   constructor() { }
 
@@ -26,6 +27,7 @@ export class TableComponent implements OnInit {
   }
 
   newGame() {
+    this.over = false;
     this.chosenRow = -1;
     this.isUserNext = 0;
     this.onScoreChange.emit({machineScore: this.machineScore, yourScore: this.yourScore});
@@ -90,6 +92,7 @@ export class TableComponent implements OnInit {
       }
     }
     if(flag) {
+      this.over = true;
       if(winz == "Machine") {
         this.machineScore++;
       } else {
@@ -101,7 +104,7 @@ export class TableComponent implements OnInit {
   }
 
   computerMove() {
-    if(this.isUserNext == 1)
+    if(this.isUserNext == 1 || this.over)
       return;
     this.isUserNext = 1;
     this.chosenRow = -1;
