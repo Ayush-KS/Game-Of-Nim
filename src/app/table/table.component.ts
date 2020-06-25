@@ -11,9 +11,10 @@ import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 export class TableComponent implements OnInit {
   @Output() onScoreChange: EventEmitter<any> = new EventEmitter<any>();
   sticks: any[][];
-  isUserNext: boolean;
+  isUserNext: number;
   winner: string;
   //showPrompt: boolean;
+  chosenRow: number;
   clicked: any;
   machineScore: number;
   yourScore: number;
@@ -27,6 +28,8 @@ export class TableComponent implements OnInit {
   }
 
   newGame() {
+    this.chosenRow = -1;
+    this.isUserNext = 0;
     this.onScoreChange.emit({machineScore: this.machineScore, yourScore: this.yourScore});
     this.winner = null;
     this.sticks = [];
@@ -57,6 +60,12 @@ export class TableComponent implements OnInit {
   // }
 
   hideStick(i:number, j:number) {
+    if(this.chosenRow == -1) {
+      this.chosenRow = i;
+    } else if(this.chosenRow != i) {
+      return;
+    }
+    this.isUserNext = 2;
     var id = "row" + (i+1);
     id = id.toString();
     // console.log(id);
@@ -106,8 +115,10 @@ export class TableComponent implements OnInit {
   }
 
   computerMove() {
-    this.isUserNext = true;
-    
+    if(this.isUserNext == 1)
+      return;
+    this.isUserNext = 1;
+    this.chosenRow = -1;
     let rowsCount = [5];
     
     for(let i = 1; i <= 4; i++) {
